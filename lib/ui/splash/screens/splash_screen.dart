@@ -1,4 +1,6 @@
 import 'package:binsar_farms_shipment_delivery/utils/constants/assets.dart';
+import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
+import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -26,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Text(
                   "SHIPMENT",
-                  style: Theme.of(context).textTheme.displaySmall,
+                  style: context.displaySmall?.copyWith(color: context.primary),
                 )
               ],
             )

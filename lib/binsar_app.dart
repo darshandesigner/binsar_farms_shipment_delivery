@@ -15,7 +15,7 @@ class _BinsarAppState extends State<BinsarApp> {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: goRouter,
-      theme: themeData(),
+      theme: AppThemeData.lightThemeData,
     );
   }
 }
