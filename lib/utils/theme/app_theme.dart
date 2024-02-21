@@ -28,7 +28,7 @@ class AppThemeData {
   static const ColorScheme lightColorScheme = ColorScheme(
     primary: AppColors.primaryColor,
     primaryContainer: AppColors.backgroundColor,
-    onPrimary: _darkFillColor,
+    onPrimary: _lightFillColor,
     secondary: Colors.black,
 
     /// unused color

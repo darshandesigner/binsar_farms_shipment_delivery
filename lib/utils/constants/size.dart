@@ -77,3 +77,4 @@ const SizedBox height16 = SizedBox(height: pixel16);
 const SizedBox height18 = SizedBox(height: pixel18);
 const SizedBox height20 = SizedBox(height: pixel20);
 const SizedBox height24 = SizedBox(height: pixel24);
+const SizedBox height32 = SizedBox(height: pixel32);
