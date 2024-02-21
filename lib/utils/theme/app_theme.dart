@@ -66,13 +66,14 @@ class AppThemeData {
 
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor, TextTheme textTheme) {
     return ThemeData(
-        useMaterial3: true,
-        colorScheme: colorScheme,
-        focusColor: focusColor,
-        textTheme: textTheme,
-        bottomNavigationBarTheme: bottomNavigationbarTheme(),
-        primarySwatch: AppColors.getMaterialColor(colorScheme.primary),
-        scaffoldBackgroundColor: colorScheme.primaryContainer);
+      useMaterial3: true,
+      colorScheme: colorScheme,
+      focusColor: focusColor,
+      textTheme: textTheme,
+      bottomNavigationBarTheme: bottomNavigationbarTheme(),
+      primarySwatch: AppColors.getMaterialColor(colorScheme.primary),
+      scaffoldBackgroundColor: colorScheme.primaryContainer,
+    );
   }
 
   static const light = FontWeight.w300;

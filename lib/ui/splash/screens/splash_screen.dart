@@ -3,9 +3,11 @@ import 'package:binsar_farms_shipment_delivery/core/routes/routes.dart';
 import 'package:binsar_farms_shipment_delivery/core/routes/routes_name.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/assets.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
+import 'package:binsar_farms_shipment_delivery/utils/extensions/buid_context_extension.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,12 +21,14 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(seconds: 4),
-          () {
-            goRouter.goNamed(RoutesName.login.name);
+      const Duration(seconds: 2),
+      () {
+        // goRouter.goNamed(RoutesName.login.name);
+        context.pushNamedAndRemoveUntil(RoutesName.login.name);
       },
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,24 +41,31 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 300,
               height: 240,
             ),
-            Container(
-              width: 300,
+            SizedBox(
+              // width: 300,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "SHIPMENT",
-                    style: context.displaySmall?.copyWith(color: context.primary,fontSize: pixel25),
+                    style: context.headlineSmall?.copyWith(color: context.primary),
+                  ),
+                  const SizedBox(
+                    width: 8,
                   ),
                   Image.asset(
                     ImageAssets.truckLogo,
                     width: pixel60,
                     height: pixel60,
                   ),
+                  const SizedBox(
+                    width: 8,
+                  ),
                   Text(
                     "SOLUTION",
-                    style: context.displaySmall?.copyWith(color: context.primary,fontSize: pixel25),
+                    style: context.headlineSmall?.copyWith(color: context.primary),
+                    // style: context.displaySmall?.copyWith(color: context.primary, fontSize: pixel25),
                   ),
                 ],
               ),
