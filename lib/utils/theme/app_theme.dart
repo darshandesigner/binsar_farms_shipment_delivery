@@ -28,11 +28,11 @@ class AppThemeData {
   static const ColorScheme lightColorScheme = ColorScheme(
     primary: AppColors.primaryColor,
     primaryContainer: AppColors.backgroundColor,
-    onPrimary: _darkFillColor,
+    onPrimary: _lightFillColor,
     secondary: Colors.black,
+    secondaryContainer: AppColors.lightTextColor,
 
     /// unused color
-    secondaryContainer: Color(0xFFF0F0F0),
     onSecondary: Colors.white,
     surface: Color(0xFFc9c9c9),
     onSurface: Color(0xFF696969),
