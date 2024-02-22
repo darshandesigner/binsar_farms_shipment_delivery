@@ -46,6 +46,8 @@ const double pixel80 = 80;
 const double pixel85 = 85;
 const double pixel90 = 90;
 const double pixel100 = 100;
+const double pixel110 = 110;
+const double pixel200 = 200;
 
 const double largeText = 19;
 const double labelText = 17;

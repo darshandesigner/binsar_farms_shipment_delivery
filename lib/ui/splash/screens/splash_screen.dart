@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:binsar_farms_shipment_delivery/core/routes/routes.dart';
 import 'package:binsar_farms_shipment_delivery/core/routes/routes_name.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/assets.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
@@ -42,7 +41,6 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 240,
             ),
             SizedBox(
-              // width: 300,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,7 +63,6 @@ class _SplashScreenState extends State<SplashScreen> {
                   Text(
                     "SOLUTION",
                     style: context.headlineSmall?.copyWith(color: context.primary),
-                    // style: context.displaySmall?.copyWith(color: context.primary, fontSize: pixel25),
                   ),
                 ],
               ),

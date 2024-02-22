@@ -1,8 +1,4 @@
-import 'dart:ffi';
-
 import 'package:binsar_farms_shipment_delivery/core/routes/routes_name.dart';
-import 'package:binsar_farms_shipment_delivery/ui/auth/widget/otpbox.dart';
-import 'package:binsar_farms_shipment_delivery/ui/widget/signin_logout_button.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/assets.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/buid_context_extension.dart';
@@ -10,6 +6,9 @@ import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
 import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_button.dart';
 import 'package:flutter/material.dart';
+import 'package:otp_text_field/otp_field.dart';
+import 'package:otp_text_field/otp_field_style.dart';
+import 'package:otp_text_field/style.dart';
 
 class PhoneLoginScreen extends StatefulWidget {
   const PhoneLoginScreen({super.key});
@@ -19,6 +18,8 @@ class PhoneLoginScreen extends StatefulWidget {
 }
 
 class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
+  OtpFieldController otpController = OtpFieldController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +35,6 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                 height: 180,
               ),
               Container(
-                // width:220,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,52 +57,48 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                     Text(
                       "SOLUTION",
                       style: context.titleSmall?.copyWith(color: context.primary),
-                      // style: context.displaySmall?.copyWith(color: context.primary, fontSize: pixel17),
                     ),
                   ],
                 ),
               ),
               height24,
-              // Container(
-              //   height: 40,
-              //   decoration: BoxDecoration(
-              //       borderRadius: BorderRadius.circular(5),
-              //       border: Border.all(
-              //         color: context.primary,
-              //       )),
-              //   child: Center(
-              //     child: Padding(
-              //       padding: const EdgeInsets.only(top: 15, left: 15),
-              //       child: TextField(
-              //         decoration: InputDecoration(hintText: 'Mobile Number', border: InputBorder.none),
-              //       ),
-              //     ),
-              //   ),
-              // ),
               TextFormField(
-                decoration: const InputDecoration(
-                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.green, width: 2)),
-                    border: OutlineInputBorder(borderSide: BorderSide(color: Colors.red, width: 2)),
+                decoration:  InputDecoration(
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: context.primary, width: 2)),
+                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: context.primary, width: 2)),
+                    border: OutlineInputBorder(borderSide: BorderSide(color: context.primary, width: 2)),
                     hintText: "Mobile Number",
                     contentPadding: EdgeInsets.all(10)),
               ),
               height32,
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                otpbox(context),
-                otpbox(context),
-                otpbox(context),
-                otpbox(context),
-              ]),
+              OTPTextField(
+                controller: otpController,
+                length: 4,
+                obscureText: true,
+                fieldStyle: FieldStyle.box,
+                width: MediaQuery.of(context).size.width,
+                fieldWidth: 50,
+                keyboardType: TextInputType.number,
+                style: TextStyle(color: context.primary,fontSize: 30),
+                contentPadding: EdgeInsets.zero,
+                otpFieldStyle: OtpFieldStyle(
+                  errorBorderColor: Colors.red,
+                  disabledBorderColor: context.primary,
+                  enabledBorderColor: context.primary,
+                  focusBorderColor: context.primary,
+                ),
+
+              ),
               height32,
               BinsarFilledButton(
+                borderRadius: BorderRadius.circular(8),
+                padding: EdgeInsets.symmetric(vertical: 5),
                 name: "SIGN IN",
                 onTap: () {
                   context.pushNamedAndRemoveUntil(RoutesName.home.name);
                 },
-                width: 300,
+                width: 250,
               ),
-              // height32,
-              // signin_logout_button(context, btnName: 'SIGN IN', routePath: RoutesName.home.path),
             ],
           ),
         ),

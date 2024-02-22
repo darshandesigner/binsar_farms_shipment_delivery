@@ -39,7 +39,7 @@ class BinsarFilledButton extends StatelessWidget {
         child: Text(
           name,
           textAlign: TextAlign.center,
-          style: context.titleLarge?.copyWith(color: textcolor ?? context.background),
+          style: context.titleLarge?.copyWith(color: textcolor ?? context.background,fontSize: 14),
         ),
       ),
     );

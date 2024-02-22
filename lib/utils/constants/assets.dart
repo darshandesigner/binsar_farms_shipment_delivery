@@ -17,4 +17,9 @@ class ImageAssets {
   static const subscriptionIcon = "${imagePath}subscription_Icon.png";
   static const vacationIcon = "${imagePath}vacation_Icon.png";
   static const menuIcon = "${imagePath}menu_Icon.png";
+  static const farmmilkbottle = "${imagePath}freshfarmmilkbottle.png";
+  static const cowmilkpouch = "${imagePath}cowmilkpouch.png";
+  static const paneer = "${imagePath}paneer.png";
+  static const farmmilk = "${imagePath}freshfarmmilk.png";
+  static const phoneIcon = "${imagePath}phon_icon.png";
 }

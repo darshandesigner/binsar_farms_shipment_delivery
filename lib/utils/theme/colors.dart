@@ -22,6 +22,7 @@ class AppColors {
   static const Color statusGreen = Color(0xFF198754);
   static const Color statusRed = Color(0xFFDC3545);
   static const Color statusYallow = Color(0xFFFFC107);
+  static const Color statusOrange = Color(0xFFEF5701);
 
   static const String primaryColorString = "#00728B";
 
