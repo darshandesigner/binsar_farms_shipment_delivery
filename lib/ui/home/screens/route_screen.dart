@@ -31,7 +31,6 @@ class _RouteScreenState extends State<RouteScreen> {
         ),
       ),
       body: Container(
-
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

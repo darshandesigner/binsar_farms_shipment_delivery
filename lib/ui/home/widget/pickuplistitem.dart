@@ -1,4 +1,3 @@
-import 'package:binsar_farms_shipment_delivery/utils/constants/assets.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
