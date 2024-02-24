@@ -63,7 +63,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
               ),
               height24,
               TextFormField(
-                decoration:  InputDecoration(
+                decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: context.primary, width: 2)),
                     enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: context.primary, width: 2)),
                     border: OutlineInputBorder(borderSide: BorderSide(color: context.primary, width: 2)),
@@ -74,12 +74,12 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
               OTPTextField(
                 controller: otpController,
                 length: 4,
-                obscureText: true,
+                // obscureText: true,
                 fieldStyle: FieldStyle.box,
                 width: MediaQuery.of(context).size.width,
                 fieldWidth: 50,
                 keyboardType: TextInputType.number,
-                style: TextStyle(color: context.primary,fontSize: 30),
+                style: TextStyle(color: context.primary, fontSize: 30),
                 contentPadding: EdgeInsets.zero,
                 otpFieldStyle: OtpFieldStyle(
                   errorBorderColor: Colors.red,
@@ -87,17 +87,16 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                   enabledBorderColor: context.primary,
                   focusBorderColor: context.primary,
                 ),
-
               ),
               height32,
               BinsarFilledButton(
                 borderRadius: BorderRadius.circular(8),
-                padding: EdgeInsets.symmetric(vertical: 5),
+                padding: const EdgeInsets.symmetric(vertical: 10),
                 name: "SIGN IN",
                 onTap: () {
                   context.pushNamedAndRemoveUntil(RoutesName.home.name);
                 },
-                width: 250,
+                width: 300,
               ),
             ],
           ),

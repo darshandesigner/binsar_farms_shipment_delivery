@@ -1,16 +1,8 @@
-import 'package:binsar_farms_shipment_delivery/core/routes/routes_name.dart';
-import 'package:binsar_farms_shipment_delivery/ui/home/widget/listItem.dart';
-import 'package:binsar_farms_shipment_delivery/ui/widget/back.dart';
+import 'package:binsar_farms_shipment_delivery/ui/home/widget/content_widget.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/assets.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
-import 'package:binsar_farms_shipment_delivery/utils/extensions/buid_context_extension.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
-import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
-import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_bottomnavigationbar.dart';
-import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,12 +12,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  double iconsize = pixel30;
+  int index = 0;
+
   @override
   Widget build(BuildContext context) {
-    double BottomNavigtionbariconSize = 30;
     return Scaffold(
         appBar: AppBar(
-          leading: Goback(context),
+          // leading: Goback(context),
           backgroundColor: context.background,
           centerTitle: true,
           title: Image.asset(
@@ -34,42 +28,56 @@ class _HomeScreenState extends State<HomeScreen> {
             height: pixel40,
           ),
         ),
-        body: Column(
-          children: [
-            Text(
-              'HOME',
-              style: context.titleLarge?.copyWith(color: context.primary, fontSize: pixel20),
+        body: ContentWidget(index: index),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: index,
+          onTap: (inde) {
+            if (inde != 4) {
+              setState(() {
+                index = inde;
+              });
+            }
+          },
+          showUnselectedLabels: true,
+          items: [
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                ImageAssets.homeIcon,
+                height: iconsize,
+                width: iconsize,
+                color: index == 0 ? context.primary : Colors.grey,
+              ),
+              label: 'Home',
             ),
-            height32,
-            Row(
-              children: [
-                Expanded(child: listItem(context,imageName: ImageAssets.pickuplist, Title: 'PICKUP LIST', routePath: RoutesName.pickuplist.name)),
-                Expanded(child: listItem(context,imageName: ImageAssets.deliveries, Title: 'DELIVERIES', routePath: RoutesName.deliveries.name),)
-              ],
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                ImageAssets.pickuplist,
+                height: iconsize,
+                width: iconsize,
+                color: index == 1 ? context.primary : Colors.grey,
+              ),
+              label: 'Pickup',
             ),
-            Row(
-              children: [
-                Expanded(child: listItem(context,imageName: ImageAssets.delivaryRoute, Title: 'DELIVERY\nROUTE', routePath: RoutesName.route.name)),
-                Expanded(child: listItem(context,imageName: ImageAssets.shipmentSummary, Title: 'SHIPMENT\nSUMMARY', routePath:'')),
-              ],
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                ImageAssets.deliveries,
+                height: iconsize,
+                width: iconsize,
+                color: index == 2 ? context.primary : Colors.grey,
+              ),
+              label: 'Delivery',
             ),
-            Row(
-              children: [
-                Expanded(child: listItem(context,imageName: ImageAssets.attendance, Title: 'ATTENDANCE', routePath: '')),
-                Expanded(child: listItem(context,imageName: ImageAssets.SOS, Title: 'SOS', routePath: '')),
-              ],
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                ImageAssets.delivaryRoute,
+                height: iconsize,
+                width: iconsize,
+                color: index == 3 ? context.primary : Colors.grey,
+              ),
+              label: 'Route',
             ),
-            height32,
-            BinsarFilledButton(
-              borderRadius: BorderRadius.circular(pixel8),
-              padding: EdgeInsets.symmetric(vertical: pixel5),
-              width: 250,
-              name: "LOG OUT",
-              onTap:() =>  context.pushNamedAndRemoveUntil(RoutesName.login.name),
-            )
+            BottomNavigationBarItem(icon: Image.asset(ImageAssets.menuIcon, height: iconsize, width: iconsize), label: 'Menu'),
           ],
-        ),
-        bottomNavigationBar: BinsarBottomNavigationbar()
-    );
+        ));
   }
 }

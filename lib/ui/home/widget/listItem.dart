@@ -1,12 +1,11 @@
 import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
-import 'package:binsar_farms_shipment_delivery/utils/extensions/buid_context_extension.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
 import 'package:flutter/material.dart';
 
-Widget listItem(BuildContext context,{required String imageName,required String Title,required String routePath}){
+Widget listItem(BuildContext context, {required String imageName, required String Title, required String routePath}) {
   return InkWell(
-    onTap: () => context.pushNamedAndRemoveUntil(routePath),
+    // onTap: () => goRouter.pushNamed(routePath),
     child: Container(
       padding: EdgeInsets.all(pixel15),
       child: Column(
