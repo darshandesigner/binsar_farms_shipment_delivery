@@ -1,7 +1,9 @@
 import 'package:binsar_farms_shipment_delivery/core/routes/routes_name.dart';
 import 'package:binsar_farms_shipment_delivery/ui/auth/screens/phone_login_screen.dart';
+import 'package:binsar_farms_shipment_delivery/ui/home/screens/attendance_screen.dart';
 import 'package:binsar_farms_shipment_delivery/ui/home/screens/deliveries_screen.dart';
-import 'package:binsar_farms_shipment_delivery/ui/home/screens/deliverydetail_screen.dart';
+import 'package:binsar_farms_shipment_delivery/ui/home/screens/delivery_detail_screen.dart';
+import 'package:binsar_farms_shipment_delivery/ui/home/screens/delivery_summary.dart';
 import 'package:binsar_farms_shipment_delivery/ui/home/screens/home_screen.dart';
 import 'package:binsar_farms_shipment_delivery/ui/home/screens/pickuplist_screen.dart';
 import 'package:binsar_farms_shipment_delivery/ui/home/screens/route_screen.dart';
@@ -61,7 +63,21 @@ final GoRouter goRouter = GoRouter(
       builder: (BuildContext context, GoRouterState state) {
         return RouteScreen();
       },
-    )
+    ),
+    GoRoute(
+      path: RoutesName.deliverySummary.path,
+      name: RoutesName.deliverySummary.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const DeliverySummary();
+      },
+    ),
+    GoRoute(
+      path: RoutesName.attendance.path,
+      name: RoutesName.attendance.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const AttendanceScreen();
+      },
+    ),
   ],
   errorBuilder: (BuildContext context, GoRouterState state) {
     return Scaffold(

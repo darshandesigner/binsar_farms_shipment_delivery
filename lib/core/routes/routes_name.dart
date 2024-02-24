@@ -1,12 +1,4 @@
-enum RoutesName {
-  splash,
-  login,
-  home,
-  pickuplist,
-  deliveries,
-  deliveriesdetail,
-  route
-}
+enum RoutesName { splash, login, home, pickuplist, deliveries, deliveriesdetail, route, deliverySummary, attendance }
 
 extension RoutesNameHelper on RoutesName {
   String get name {
@@ -25,6 +17,10 @@ extension RoutesNameHelper on RoutesName {
         return 'deliveriesdetail';
       case RoutesName.route:
         return 'route';
+      case RoutesName.deliverySummary:
+        return 'delivery-summary';
+      case RoutesName.attendance:
+        return 'attendance';
     }
   }
 
@@ -44,6 +40,10 @@ extension RoutesNameHelper on RoutesName {
         return '/deliveriesdetail';
       case RoutesName.route:
         return '/route';
+      case RoutesName.deliverySummary:
+        return '/delivery-summary';
+      case RoutesName.attendance:
+        return '/attendance';
     }
   }
 }

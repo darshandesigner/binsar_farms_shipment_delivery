@@ -37,12 +37,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
           Row(
             children: [
               Expanded(child: listItem(context, imageName: ImageAssets.delivaryRoute, Title: 'DELIVERY\nROUTE', routePath: RoutesName.route.name)),
-              Expanded(child: listItem(context, imageName: ImageAssets.shipmentSummary, Title: 'SHIPMENT\nSUMMARY', routePath: '')),
+              Expanded(
+                  child: listItem(context,
+                      imageName: ImageAssets.shipmentSummary, Title: 'SHIPMENT\nSUMMARY', routePath: RoutesName.deliverySummary.name)),
             ],
           ),
           Row(
             children: [
-              Expanded(child: listItem(context, imageName: ImageAssets.attendance, Title: 'ATTENDANCE', routePath: '')),
+              Expanded(child: listItem(context, imageName: ImageAssets.attendance, Title: 'ATTENDANCE', routePath: RoutesName.attendance.name)),
               Expanded(child: listItem(context, imageName: ImageAssets.SOS, Title: 'SOS', routePath: '')),
             ],
           ),

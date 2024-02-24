@@ -1,56 +1,61 @@
-
-
 import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
 import 'package:binsar_farms_shipment_delivery/utils/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-Widget DeliveryDetailListItem(BuildContext context,{required String title,required String routePath,required String address,required int items}){
-  return  Container(
-    margin: EdgeInsets.symmetric(horizontal: pixel12,vertical: pixel2),
-    padding: EdgeInsets.all(pixel10),
-    height: pixel110,
-    decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(pixel10),
-        border: Border.all(
+Widget deliveryDetailListItem(BuildContext context,
+    {required String title, required String imageName, required String packing, required int quantity}) {
+  return SizedBox(
+    height: pixel90,
+    child: Column(
+      children: [
+        Divider(
           color: AppColors.lightGrey,
-        )
-    ),
-    child: Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: Row(
-              children: [
-
-                Expanded(child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+        ),
+        height10,
+        Container(
+          padding: EdgeInsets.only(left: pixel10, right: pixel30),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Row(
                   children: [
-                    Text(
-                      title,
-                      style: context.titleLarge?.copyWith(color: context.primary,fontWeight: FontWeight.bold),
+                    Image.asset(
+                      imageName,
+                      height: pixel50,
+                      width: pixel50,
                     ),
-                    Text(
-                      address,
-                      style: context.bodySmall?.copyWith(color: AppColors.textColor,fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      '$items Items',
-                      style: context.bodySmall?.copyWith(fontWeight: FontWeight.bold,color: context.primary),
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: context.titleLarge?.copyWith(color: context.primary, fontWeight: FontWeight.bold),
+                          ),
+                          height10,
+                          Text(
+                            packing,
+                            style: context.bodySmall?.copyWith(color: AppColors.lightTextColor),
+                          ),
+                        ],
+                      ),
                     )
                   ],
-                ),)
-              ],
-            ),
+                ),
+              ),
+              width24,
+              Text(
+                '$quantity',
+                style: context.titleLarge,
+              )
+            ],
           ),
-          width24,
-
-        ],
-      ),
-
+        ),
+      ],
     ),
   );
 }

@@ -1,3 +1,4 @@
+import 'package:binsar_farms_shipment_delivery/core/routes/routes.dart';
 import 'package:binsar_farms_shipment_delivery/ui/home/widget/pickuplistitem.dart';
 import 'package:binsar_farms_shipment_delivery/ui/widget/back.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/assets.dart';
@@ -18,17 +19,19 @@ class _PickuplistScreenState extends State<PickuplistScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   // leading: Goback(context),
-      //   iconTheme: IconThemeData(color: context.primary),
-      //   backgroundColor: context.background,
-      //   centerTitle: true,
-      //   title: Image.asset(
-      //     ImageAssets.smallLogo,
-      //     width: pixel40,
-      //     height: pixel40,
-      //   ),
-      // ),
+      appBar: goRouter.canPop()
+          ? AppBar(
+              // leading: Goback(context),
+              iconTheme: IconThemeData(color: context.primary),
+              backgroundColor: context.background,
+              centerTitle: true,
+              title: Image.asset(
+                ImageAssets.smallLogo,
+                width: pixel40,
+                height: pixel40,
+              ),
+            )
+          : null,
       body: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
