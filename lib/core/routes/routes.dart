@@ -19,49 +19,49 @@ final GoRouter goRouter = GoRouter(
       path: RoutesName.splash.path,
       name: RoutesName.splash.name,
       builder: (BuildContext context, GoRouterState state) {
-        return SplashScreen();
+        return const SplashScreen();
       },
     ),
     GoRoute(
       path: RoutesName.login.path,
       name: RoutesName.login.name,
       builder: (BuildContext context, GoRouterState state) {
-        return PhoneLoginScreen();
+        return const PhoneLoginScreen();
       },
     ),
     GoRoute(
       path: RoutesName.home.path,
       name: RoutesName.home.name,
       builder: (BuildContext context, GoRouterState state) {
-        return HomeScreen();
+        return const HomeScreen();
       },
     ),
     GoRoute(
       path: RoutesName.pickuplist.path,
       name: RoutesName.pickuplist.name,
       builder: (BuildContext context, GoRouterState state) {
-        return PickuplistScreen();
+        return const PickuplistScreen();
       },
     ),
     GoRoute(
       path: RoutesName.deliveries.path,
       name: RoutesName.deliveries.name,
       builder: (BuildContext context, GoRouterState state) {
-        return Deliveries();
+        return const Deliveries();
       },
     ),
     GoRoute(
       path: RoutesName.deliveriesdetail.path,
       name: RoutesName.deliveriesdetail.name,
       builder: (BuildContext context, GoRouterState state) {
-        return DeliveryDetail();
+        return const DeliveryDetail();
       },
     ),
     GoRoute(
       path: RoutesName.route.path,
       name: RoutesName.route.name,
       builder: (BuildContext context, GoRouterState state) {
-        return RouteScreen();
+        return const RouteScreen();
       },
     ),
     GoRoute(

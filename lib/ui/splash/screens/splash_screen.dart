@@ -5,8 +5,8 @@ import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/buid_context_extension.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
+import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  BText(
                     "SHIPMENT",
                     style: context.headlineSmall?.copyWith(color: context.primary),
                   ),
@@ -60,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   const SizedBox(
                     width: 8,
                   ),
-                  Text(
+                  BText(
                     "SOLUTION",
                     style: context.headlineSmall?.copyWith(color: context.primary),
                   ),

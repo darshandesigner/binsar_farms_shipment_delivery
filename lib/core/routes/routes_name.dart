@@ -1,4 +1,14 @@
-enum RoutesName { splash, login, home, pickuplist, deliveries, deliveriesdetail, route, deliverySummary, attendance }
+enum RoutesName {
+  splash,
+  login,
+  home,
+  pickuplist,
+  deliveries,
+  deliveriesdetail,
+  route,
+  deliverySummary,
+  attendance,
+}
 
 extension RoutesNameHelper on RoutesName {
   String get name {

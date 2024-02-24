@@ -1,5 +1,6 @@
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
+import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_text.dart';
 import 'package:flutter/material.dart';
 
 class BinsarFilledButton extends StatelessWidget {
@@ -33,13 +34,13 @@ class BinsarFilledButton extends StatelessWidget {
           borderRadius: borderRadius ?? BorderRadius.circular(4),
           color: backgroundcolor ?? context.primary,
         ),
-        width: width ?? double.infinity,
+        width: width,
         height: height,
         padding: padding ?? const EdgeInsets.all(10),
-        child: Text(
+        child: BText(
           name,
           textAlign: TextAlign.center,
-          style: context.titleLarge?.copyWith(color: textcolor ?? context.background,fontSize: 14),
+          style: context.titleLarge?.copyWith(color: textcolor ?? context.background, fontSize: 14),
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:binsar_farms_shipment_delivery/utils/constants/assets.dart';
 import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
+import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_text.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -32,13 +33,13 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
         padding: const EdgeInsets.all(pixel16),
         child: Column(
           children: [
-            Text(
+            BText(
               "ATTENDANCE",
               textAlign: TextAlign.center,
               style: context.titleLarge?.copyWith(color: context.primary),
             ),
             height16,
-            Text(
+            BText(
               getMonth(month),
               style: context.displaySmall?.copyWith(color: const Color(0xff6864e3)),
             ),
@@ -49,11 +50,6 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
               focusedDay: DateTime.now(),
               availableCalendarFormats: const {CalendarFormat.month: 'Month'},
               headerVisible: false,
-              onPageChanged: (date) {
-                // setState(() {
-                //   month = date.month;
-                // });
-              },
               calendarStyle: CalendarStyle(
                 defaultTextStyle: context.titleLarge!,
                 weekendTextStyle: context.titleLarge!,
@@ -84,12 +80,12 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
               ),
             ),
             height24,
-            Text(
+            BText(
               "PRESENT :      30 Days",
               style: context.titleLarge,
             ),
             height10,
-            Text(
+            BText(
               "ABSENT :      01 Days",
               style: context.titleLarge,
             )

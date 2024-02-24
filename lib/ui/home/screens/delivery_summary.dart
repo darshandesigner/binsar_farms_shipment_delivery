@@ -4,6 +4,7 @@ import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
 import 'package:binsar_farms_shipment_delivery/utils/theme/colors.dart';
 import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_button.dart';
+import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_text.dart';
 import 'package:flutter/material.dart';
 
 class DeliverySummary extends StatefulWidget {
@@ -31,7 +32,7 @@ class _DeliverySummaryState extends State<DeliverySummary> {
         padding: const EdgeInsets.symmetric(vertical: pixel16),
         child: Column(
           children: [
-            Text(
+            BText(
               "DELIVERY SUMMARY",
               textAlign: TextAlign.center,
               style: context.titleLarge?.copyWith(color: context.primary),
@@ -47,7 +48,7 @@ class _DeliverySummaryState extends State<DeliverySummary> {
                     Icons.arrow_back_ios,
                     color: context.primary,
                   ),
-                  Text(
+                  BText(
                     "FEBRUARY,2024",
                     style: context.titleLarge?.copyWith(color: context.primary),
                   ),
@@ -83,7 +84,7 @@ class _DeliverySummaryState extends State<DeliverySummary> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            BText(
                               "11-Feb-2024",
                               style: context.titleLarge?.copyWith(color: context.primary),
                             ),
@@ -110,12 +111,12 @@ class MyBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 50),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 50),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
+          BText(
             "DELIVERY SUMMARY",
             textAlign: TextAlign.center,
             style: context.titleLarge?.copyWith(color: context.primary),
@@ -124,68 +125,68 @@ class MyBottomSheet extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  BText(
                     'DATE',
                   ),
                   SizedBox(
                     height: 4,
                   ),
-                  Text('DISTANCE COVERED'),
+                  BText('DISTANCE COVERED'),
                   SizedBox(
                     height: 4,
                   ),
-                  Text('DESTINATION COVERED'),
+                  BText('DESTINATION COVERED'),
                   SizedBox(
                     height: 4,
                   ),
-                  Text('STATUS'),
+                  BText('STATUS'),
                   SizedBox(
                     height: 4,
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 width: 16,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  BText(
                     "11-FEB-2024",
                     style: context.titleLarge?.copyWith(color: context.onPrimary),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
-                  Text(
+                  BText(
                     "185 KMS",
                     style: context.titleLarge?.copyWith(color: context.onPrimary),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
-                  Text(
+                  BText(
                     "8",
                     style: context.titleLarge?.copyWith(color: context.onPrimary),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
-                  Text(
+                  BText(
                     "COMPLETED",
                     style: context.titleLarge?.copyWith(color: AppColors.statusGreen),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                 ],
               )
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           BinsarFilledButton(
             onTap: () {
               Navigator.pop(context);

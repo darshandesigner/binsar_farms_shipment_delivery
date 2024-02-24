@@ -2,6 +2,7 @@ import 'package:binsar_farms_shipment_delivery/utils/constants/size.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
 import 'package:binsar_farms_shipment_delivery/utils/theme/colors.dart';
+import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_text.dart';
 import 'package:flutter/material.dart';
 
 Widget deliveryDetailListItem(BuildContext context,
@@ -10,12 +11,12 @@ Widget deliveryDetailListItem(BuildContext context,
     height: pixel90,
     child: Column(
       children: [
-        Divider(
+        const Divider(
           color: AppColors.lightGrey,
         ),
         height10,
         Container(
-          padding: EdgeInsets.only(left: pixel10, right: pixel30),
+          padding: const EdgeInsets.only(left: pixel10, right: pixel30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -32,12 +33,12 @@ Widget deliveryDetailListItem(BuildContext context,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          BText(
                             title,
                             style: context.titleLarge?.copyWith(color: context.primary, fontWeight: FontWeight.bold),
                           ),
                           height10,
-                          Text(
+                          BText(
                             packing,
                             style: context.bodySmall?.copyWith(color: AppColors.lightTextColor),
                           ),
@@ -48,7 +49,7 @@ Widget deliveryDetailListItem(BuildContext context,
                 ),
               ),
               width24,
-              Text(
+              BText(
                 '$quantity',
                 style: context.titleLarge,
               )

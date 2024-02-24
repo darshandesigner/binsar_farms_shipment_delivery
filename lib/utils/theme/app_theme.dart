@@ -83,3 +83,21 @@ class AppThemeData {
   static const bold = FontWeight.w700;
   static const black = FontWeight.w900;
 }
+
+const ColorScheme light = ColorScheme(
+  primary: AppColors.primaryColor,
+  primaryContainer: AppColors.backgroundColor,
+  onPrimary: AppColors.backgroundColor,
+  secondary: Colors.black,
+
+  /// unused color
+  secondaryContainer: Color(0xFFF0F0F0),
+  onSecondary: Colors.white,
+  surface: Color(0xFFc9c9c9),
+  onSurface: Color(0xFF696969),
+  background: Color(0xFFFFFFFF),
+  onBackground: Colors.white,
+  error: Colors.white,
+  onError: Colors.white,
+  brightness: Brightness.light,
+);

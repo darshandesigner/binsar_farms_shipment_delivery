@@ -5,6 +5,7 @@ import 'package:binsar_farms_shipment_delivery/utils/extensions/buid_context_ext
 import 'package:binsar_farms_shipment_delivery/utils/extensions/color_extenstion.dart';
 import 'package:binsar_farms_shipment_delivery/utils/extensions/text_style_extension.dart';
 import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_button.dart';
+import 'package:binsar_farms_shipment_delivery/utils/widgets/binsar_text.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
@@ -34,32 +35,30 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                 width: 220,
                 height: 180,
               ),
-              Container(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "SHIPMENT",
-                      style: context.titleSmall?.copyWith(color: context.primary),
-                    ),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    Image.asset(
-                      ImageAssets.truckLogo,
-                      width: pixel45,
-                      height: pixel45,
-                    ),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    Text(
-                      "SOLUTION",
-                      style: context.titleSmall?.copyWith(color: context.primary),
-                    ),
-                  ],
-                ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  BText(
+                    "SHIPMENT",
+                    style: context.titleSmall?.copyWith(color: context.primary),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Image.asset(
+                    ImageAssets.truckLogo,
+                    width: pixel45,
+                    height: pixel45,
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  BText(
+                    "SOLUTION",
+                    style: context.titleSmall?.copyWith(color: context.primary),
+                  ),
+                ],
               ),
               height24,
               TextFormField(
@@ -68,7 +67,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                     enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: context.primary, width: 2)),
                     border: OutlineInputBorder(borderSide: BorderSide(color: context.primary, width: 2)),
                     hintText: "Mobile Number",
-                    contentPadding: EdgeInsets.all(10)),
+                    contentPadding: const EdgeInsets.all(10)),
               ),
               height32,
               OTPTextField(
